@@ -1,0 +1,6 @@
+@SportInfo_Back_HostAddress = http://localhost:5014
+
+GET {{SportInfo_Back_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
