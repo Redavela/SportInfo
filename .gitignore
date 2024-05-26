@@ -10,3 +10,5 @@
 /SportInfo-Back/SportInfo-Back/obj/project.nuget.cache
 /SportInfo-Back/SportInfo-Back/obj/SportInfo-Back.csproj.nuget.dgspec.json
 /SportInfo-Back/SportInfo-Back/obj/SportInfo-Back.csproj.nuget.g.props
+/SportInfo-Back/obj/*
+/SportInfo-Back/SportInfo-Back/obj/SportInfo-Back.csproj.nuget.g.targets

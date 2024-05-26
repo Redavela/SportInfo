@@ -399,3 +399,5 @@ FodyWeavers.xsd
 
 # Custom
 .vs/*
+SportInfo-Back/obj/*
+/SportInfo-Back/obj/*
