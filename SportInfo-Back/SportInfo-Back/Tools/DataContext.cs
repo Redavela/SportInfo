@@ -1,5 +1,6 @@
 ﻿
 using Microsoft.EntityFrameworkCore;
+using SportInfo_Back.Models;
 
 namespace SportInfo_Back.Tools
 {
@@ -19,5 +20,7 @@ namespace SportInfo_Back.Tools
         {
             options.UseSqlServer(configuration.GetConnectionString("DevConnection"));
         }
+
+        public DbSet<User> Users { get; set; }
     }
 }

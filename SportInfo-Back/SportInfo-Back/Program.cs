@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Serilog;
+using SportInfo_Back.Services;
+using SportInfo_Back.Services.Interfaces;
 using SportInfo_Back.Tools;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -19,6 +21,8 @@ builder.Services.AddCors(opt =>
 // Add services to the container.
 
 builder.Services.AddControllers();
+
+builder.Services.AddScoped<IUsersService,UsersService>();
 
 builder.Services.Configure<AppSettings>(builder.Configuration.GetSection("AppSettings"));
 
