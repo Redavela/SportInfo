@@ -13,6 +13,7 @@ namespace SportInfo_Back.Models
         [JsonIgnore]
         public byte[]? PasswordHash { get; set; }
         [Required]
+        [JsonIgnore]
         public byte[]? PasswordSalt { get; set; }   
     }
 }

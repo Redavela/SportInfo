@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Serilog;
+using SportInfo_Back.Mediators;
+using SportInfo_Back.Mediators.Interfaces;
 using SportInfo_Back.Services;
 using SportInfo_Back.Services.Interfaces;
 using SportInfo_Back.Tools;
@@ -23,6 +25,7 @@ builder.Services.AddCors(opt =>
 builder.Services.AddControllers();
 
 builder.Services.AddScoped<IUsersService,UsersService>();
+builder.Services.AddScoped<IUsersMediators, UsersMediators>();
 
 builder.Services.Configure<AppSettings>(builder.Configuration.GetSection("AppSettings"));
 
