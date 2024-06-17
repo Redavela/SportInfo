@@ -9,6 +9,7 @@ namespace SportInfo_Back.Models
         public int Id { get; set; }
         [Required]
         public string Username { get; set; } = string.Empty;
+        [DataType(DataType.DateTime)]
         public DateTimeOffset DateCreation { get; set; }
         [Required]
         [JsonIgnore]

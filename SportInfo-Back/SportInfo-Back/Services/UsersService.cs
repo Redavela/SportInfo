@@ -19,9 +19,8 @@ namespace SportInfo_Back.Services
         public async Task<User> Create(string username, string password, CancellationToken ctk)
         {
             byte[] passwordHash, passwordSalt;
-            DateTimeOffset date = DateTimeOffset.Now;
             CreatePasswordHash(password, out passwordHash, out passwordSalt);
-            var user = new User() { Username = username, DateCreation = date, PasswordHash = passwordHash, PasswordSalt = passwordSalt };
+            var user = new User() { Username = username, DateCreation = DateTimeOffset.Now, PasswordHash = passwordHash, PasswordSalt = passwordSalt };
             await dataContext.Users.AddAsync(user, ctk);
             await dataContext.SaveChangesAsync(ctk);
             return user;
