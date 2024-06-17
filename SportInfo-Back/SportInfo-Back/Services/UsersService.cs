@@ -18,6 +18,15 @@ namespace SportInfo_Back.Services
 
         public async Task<User> Create(string username, string password, CancellationToken ctk)
         {
+            if (string.IsNullOrWhiteSpace(username))
+            {
+                throw new ArgumentException("Le champ 'Username' ne peut pas être vide...");
+            }
+
+            if (string.IsNullOrWhiteSpace(password))
+            {
+                throw new ArgumentException("Le champ 'Password' ne peut pas être vide...");
+            }
             byte[] passwordHash, passwordSalt;
             CreatePasswordHash(password, out passwordHash, out passwordSalt);
             var user = new User() { Username = username, PasswordHash = passwordHash, PasswordSalt = passwordSalt };
