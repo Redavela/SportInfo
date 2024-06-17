@@ -20,12 +20,12 @@ namespace SportInfo_Back.Services
         {
             if (string.IsNullOrWhiteSpace(username))
             {
-                throw new ArgumentException("Le champ 'Username' ne peut pas être vide...");
+                throw new ArgumentException("L'Username ne peut pas être vide...");
             }
 
             if (string.IsNullOrWhiteSpace(password))
             {
-                throw new ArgumentException("Le champ 'Password' ne peut pas être vide...");
+                throw new ArgumentException("Le mdp ne peut pas être vide...");
             }
             byte[] passwordHash, passwordSalt;
             CreatePasswordHash(password, out passwordHash, out passwordSalt);
