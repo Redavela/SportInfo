@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using SportInfo_Back.Enums;
+using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
 
 namespace SportInfo_Back.Models
@@ -11,6 +12,7 @@ namespace SportInfo_Back.Models
         public string Username { get; set; } = string.Empty;
         [DataType(DataType.DateTime)]
         public DateTimeOffset DateCreation { get; set; }
+        public RoleEnum Role { get; set; } = RoleEnum.User;
         [Required]
         [JsonIgnore]
         public byte[]? PasswordHash { get; set; }
