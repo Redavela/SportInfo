@@ -20,7 +20,7 @@ namespace SportInfo_Back.Services
         {
             byte[] passwordHash, passwordSalt;
             CreatePasswordHash(password, out passwordHash, out passwordSalt);
-            var user = new User() { Username = username, PasswordHash = passwordHash, PasswordSalt = passwordSalt };
+            var user = new User() { Username = username, DateCreation = DateTimeOffset.Now, PasswordHash = passwordHash, PasswordSalt = passwordSalt };
             await dataContext.Users.AddAsync(user, ctk);
             await dataContext.SaveChangesAsync(ctk);
             return user;
